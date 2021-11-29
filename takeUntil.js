@@ -1,24 +1,4 @@
-// FUNCTION IMPLEMENTATION
-const assertArraysEqual = function(arrayOne, arrayTwo) {
-  if (eqArrays(arrayOne, arrayTwo) === true ) {
-    console.log(`✅✅✅ Assertion Passed: ${arrayOne} === ${arrayTwo}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${arrayOne} !== ${arrayTwo}`);
-  }
-};
-
-//Equal Array Function
-const eqArrays = function(arrayOne, arrayTwo) {
-  if (arrayOne.length !== arrayTwo.length) {
-    return false;
-  }
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] !== arrayTwo[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
 
 //takeUntil Function
@@ -45,3 +25,5 @@ console.log('---');
 const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
 const results2 = takeUntil(data2, x => x === ',');
 assertArraysEqual(results2,["I've", "been", "to", "Hollywood"]);
+
+module.exports = takeUntil;

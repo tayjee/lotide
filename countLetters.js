@@ -1,17 +1,4 @@
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-
-};
-
-/*
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1); */
-
+const assertEqual = require('./assertEqual');
 
 const countLetters = function(text) {
 const count = {};
@@ -21,4 +8,6 @@ for (let i = 0; i < text.length; i++) {
 }
 return count
 }
-console.log(countLetters("ABBCCCDDDD EEEEE"));
+console.log(countLetters("ABBCCCDDDD EEEEE"));  
+
+module.exports = countLetters;

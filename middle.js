@@ -1,24 +1,5 @@
-// FUNCTION IMPLEMENTATION
-const assertArrayEquals = function(arrayOne, arrayTwo) {
-  if (eqArrays(arrayOne, arrayTwo) === true) {
-    console.log(`✅✅✅ Assertion Passed: ${arrayOne} === ${arrayTwo}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${arrayOne} !== ${arrayTwo}`);
-  }
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
-//Equal Array Function
-const eqArrays = function(arrayOne, arrayTwo) {
-  if (arrayOne.length !== arrayTwo.length) {
-    return false;
-  }
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] !== arrayTwo[i]) {
-      return false;
-    }
-  }
-  return true;
-};
 
 const middle = function(array) {
   //Calculations to determine which elements are the middle elements
@@ -26,7 +7,7 @@ const middle = function(array) {
   let evenMiddleOne = array[(array.length / 2) - 1];
   let evenMiddleTwo = array[(array.length / 2)];
   let oddMiddle = array[Math.round(array.length / 2) - 1];
-//Loop to check to see how many elements are in the array
+  //Loop to check to see how many elements are in the array
   if (array.length <= 2) {
     return middleArray;
   } else if (array.length % 2 === 0) {
@@ -39,13 +20,8 @@ const middle = function(array) {
   }
 };
 
-/*console.log(middle([1])); // => []
-console.log(middle([1, 2])); // => []
-console.log(middle([1, 2, 3])); // => [2]
-console.log(middle([1, 2, 3, 4, 5])); // => [3]
-console.log(middle([1, 2, 3, 4])); // => [2, 3]
-console.log(middle([1, 2, 3, 4, 5, 6])); // => [3, 4] */
+//Test
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
 
-console.log(middle([1, 2, 3, 4, 5]));
-assertArrayEquals(middle([1, 2, 3, 4, 5]), [3]);
+module.exports = middle;
 

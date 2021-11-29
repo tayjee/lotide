@@ -1,24 +1,4 @@
-// FUNCTION IMPLEMENTATION
-const assertArraysEqual = function(arrayOne, arrayTwo) {
-  if (eqArrays(arrayOne, arrayTwo) === true ) {
-    console.log(`✅✅✅ Assertion Passed: ${arrayOne} === ${arrayTwo}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${arrayOne} !== ${arrayTwo}`);
-  }
-};
-
-//Equal Array Function
-const eqArrays = function(arrayOne, arrayTwo) {
-  if (arrayOne.length !== arrayTwo.length) {
-    return false;
-  }
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] !== arrayTwo[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
 //Map Function
 const map = function(array, callBack) {
@@ -36,3 +16,5 @@ const results3 = map(words, word => word.length * 2);
 assertArraysEqual(results1, [ 'g', 'c', 't', 'm', 't' ]);
 assertArraysEqual(results2, [6, 7, 2, 5, 3]);
 assertArraysEqual(results3, [12, 14, 4, 10, 6]);
+
+module.exports = map;
